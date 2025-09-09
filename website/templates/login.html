@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<form method="POST" class="custom-form">
+  <h1 class="custom-text">Looking for a Group Tutorial?<br> Let’s Connect!</h1>
+  <br>
+  <!-- EMAIL -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+        <div class="input-group">
+            <input class="form-control" type="email" placeholder="Email" id="email" name="email">
+        </div>
+    </div>
+  </div>
+
+  <!-- Password -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+        <div class="input-group">
+            <input class="form-control" type="password" placeholder="Password" id="password" name="password">
+        </div>
+        <small class="form-text text-muted mt-1">Write your password so that you won't need to sign up again.</small>
+    </div>
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary d-block mx-auto">Let's GO</button>
+  <br>
+
+  <div class="d-flex justify-content-center align-items-center">
+    <p class="mb-0 me-2 mr-2">Don't have an account?</p>
+    <a class="nav-item nav-link p-0" id="signUp" href="/sign-up">Sign-up</a>
+  </div>      
+</form>
+{% endblock %}
+
+

@@ -1,0 +1,15 @@
+{% extends "base.html" %} <!-- Inheritance -->
+
+{% block title %}MAIN{% endblock %}
+{% block content%}
+<div class="d-flex align-items-center justify-content-center vh-90">
+    <div class="text-center"> 
+        <h1 class = "custom-text">Looking for a Group Tutorial?<br> Let’s Connect!</h1>
+           <br><br>
+        <img src="{{ url_for('static', filename='MEME.jpeg') }}"class="img-fluid" alt="Responsive Image" width="300" height="300" style="border-radius: 15px;">
+        <br><br><br><br>
+        <a href="/sign-up"><button type="button" class="btn btn-dark mr-4">Sign-up</button></a>
+        <a href="/login"><button type="button" class="btn btn-dark">Login</button></a>        
+    </div>
+</div>
+{% endblock %}

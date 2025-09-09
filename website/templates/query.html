@@ -1,0 +1,61 @@
+{% extends "base.html" %} 
+{% block title %}INFORMATION {% endblock %}
+{% block content%}
+    <div class="container mt-4" style="overflow-x: auto;">
+      <h2>Users Information</h2>  
+      <small>Please delete your data if you find the matched person.</small>
+      <br><br>  
+      <p style = "color: blue;"> *Please note that the table includes only the data for users
+        with the same major and the same levels in both English and German.</p>
+        <p style = "color: blue;"> *You can connect with the matched person via email or phone number, if provided.</p>
+      <!-- Users Table -->
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Current Group</th>
+            <!-- Added Current Group -->
+            <th>Current Tutorial</th>
+            <!-- Added Current Tutorial -->
+             <th>Desired group 1</th>
+             <th>Desired tutorial 1</th>
+             <th>Desired group 2</th>
+             <th>Desired tutorial 2 </th>
+             <th>Phone Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Loop through the users passed from the route -->
+          {% for user in users %}
+          <tr>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.current_group }}</td>
+            <!-- Shows Current Group -->
+            <td>{{ user.current_tut }}</td>
+            <td>{{ user.desired_group_1 }}</td>
+            <td>{{ user.desired_tut_1 }}</td>
+            <td>{{ user.desired_group_2 }}</td>
+            <td>{{ user.desired_tut_2 }}</td>
+            <!-- Shows Current Tutorial -->
+            <td><a href="https://wa.me/+2{{ user.telephone }}">{{ user.telephone }}</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <br><br>
+    <h3 class = "text-center">Your data has been added to our database.<br> Try logging in after a while to find the matched person.</h3>
+    <br>
+    <div class="container d-flex flex-column flex-md-row justify-content-center align-items-center">
+        <!-- LOG_OUT button -->
+   <a href="{{ url_for('auth.logout') }}" class="btn btn-primary mb-3 mb-md-0 mx-2">Log_out</a>
+   <!--UPDATE button -->
+   <a href="{{ url_for('auth.update') }}" class="btn btn-primary mb-3 mb-md-0 mx-2">UPDATE my Data</a>
+   <!-- DELETE THE DATA -->
+   <a href="{{ url_for('auth.delete') }}" class="btn btn-primary">DELETE MY DATA </a>
+  </div>
+
+    {% endblock %}
+

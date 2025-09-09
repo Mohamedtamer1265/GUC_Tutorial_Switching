@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}Update{% endblock %}
+{% block content %}
+<form method="POST">
+  <h1 class="custom-text">Update Your Information</h1>
+  <br><br>
+  <p class="text-center text-muted">You can edit the details below to keep your information up to date.</p>
+  <!-- NAME -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3">
+      <div class="form-group">
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Name"
+          name="name"
+          id="name"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- CURRENT GROUP -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="number"
+          placeholder="Current-Group"
+          id="current_group"
+          name="current_group"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- CURRENT TUTORIAL -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="number"
+          placeholder="Current-Tutorial"
+          name="current_tutorial"
+          id="current_tutorial"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- DESIRED GROUP OPTION 1 -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="number"
+          placeholder="Desired-Group (option-1)"
+          id="desired_group1"
+          name="desired_group1"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- DESIRED TUTORIAL OPTION 1 -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="number"
+          placeholder="Desired-Tutorial (option-1)"
+          name="desired_tutorial1"
+          id="desired_tutorial1"
+        />
+      </div>
+      <small class="form-text text-muted mt-1">
+        If you don’t want a specific tutorial, put 0.
+      </small>
+    </div>
+  </div>
+
+  <!-- DESIRED GROUP OPTION 2 -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="number"
+          placeholder="Desired-Group (option-2)"
+          id="desired_group2"
+          name="desired_group2"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- DESIRED TUTORIAL OPTION 2 -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="number"
+          placeholder="Desired-Tutorial (option-2)"
+          id="desired_tutorial2"
+          name="desired_tutorial2"
+        />
+      </div>
+      <small class="form-text text-muted mt-1">
+        If you don’t want a specific tutorial, put 0.
+      </small>
+    </div>
+  </div>
+
+  <!-- Phone Number -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="number"
+          placeholder="Phone Number"
+          id="phone"
+          name="phone"
+        />
+      </div>
+      <small class="form-text text-muted mt-1">
+        Providing your phone number will make communication quicker and more convenient. If you prefer not to share it, simply enter 0
+      </small>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary d-block mx-auto">Update</button>
+  <br /><br />
+</form>
+{% endblock %}

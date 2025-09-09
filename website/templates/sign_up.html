@@ -1,0 +1,282 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<form method="POST">
+  <h1 class="custom-text">
+    Looking for a Group Tutorial?<br />
+    Let’s Connect!
+  </h1>
+  <br />
+
+  <!-- NAME -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3">
+      <div class="form-group">
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Name"
+          name="name"
+          id="name"
+          value="{{ data['name'] if data['name'] else '' }}"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- EMAIL -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="email"
+          placeholder="Email"
+          id="email"
+          name="email"
+          value="{{ data['email'] if data['email'] else '' }}"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- ID -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="text"
+          placeholder="ID"
+          id="id"
+          name="id"
+          value="{{ data['user_id'] if data['user_id'] else '' }}"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- MAJOR -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <select class="form-control" id="major" name="major">
+          <option value="">Select Major</option>
+          <option value="First Year Engineering" {% if data['major'] == 'First Year Engineering' %}selected{% endif %}>First Year Engineering</option>
+          <option value="MET" {% if data['major'] == 'MET' %}selected{% endif %}>MET</option>
+          <option value="IET" {% if data['major'] == 'IET' %}selected{% endif %}>IET</option>
+          <option value="MECHA" {% if data['major'] == 'MECHA' %}selected{% endif %}>MECHA</option>
+          <option value="CIVIL" {% if data['major'] == 'CIVIL' %}selected{% endif %}>CIVIL</option>
+          <option value="PHARMACY" {% if data['major'] == 'PHARMACY' %}selected{% endif %}>PHARMACY</option>
+          <option value="LAW" {% if data['major'] == 'LAW' %}selected{% endif %}>LAW</option>
+          <option value="BI" {% if data['major'] == 'BI' %}selected{% endif %}>BI</option>
+          <option value="BUSINESS" {% if data['major'] == 'BUSINESS' %}selected{% endif %}>Business</option>
+          <option value="Applied Arts" {% if data['major'] == 'Applied Arts' %}selected{% endif %}>Applied Arts</option>
+          <option value="Production" {% if data['major'] == 'Production' %}selected{% endif %}>Production</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEMESTER -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <select class="form-control" id="semester" name="semester">
+          <option value="">Select Semester</option>
+          <option value="1" {% if data['semester'] == 1 %}selected{% endif %}>1</option>
+          <option value="2" {% if data['semester'] == 2 %}selected{% endif %}>2</option>
+          <option value="3" {% if data['semester'] == 3 %}selected{% endif %}>3</option>
+          <option value="4" {% if data['semester'] == 4 %}selected{% endif %}>4</option>
+          <option value="5" {% if data['semester'] == 5 %}selected{% endif %}>5</option>
+          <option value="6" {% if data['semester'] == 6 %}selected{% endif %}>6</option>
+          <option value="7" {% if data['semester'] == 7 %}selected{% endif %}>7</option>
+          <option value="8" {% if data['semester'] == 8 %}selected{% endif %}>8</option>
+          <option value="9" {% if data['semester'] == 9 %}selected{% endif %}>9</option>
+          <option value="10" {% if data['semester'] == 10 %}selected{% endif %}>10</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENGLISH LEVEL -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <select class="form-control" id="english" name="english">
+          <option value="">Select English Level</option>
+          <option value="AE" {% if data['english'] == 'AE' %}selected{% endif %}>AE</option>
+          <option value="AS" {% if data['english'] == 'AS' %}selected{% endif %}>AS</option>
+          <option value="SM" {% if data['english'] == 'SM' %}selected{% endif %}>SM</option>
+          <option value="CPS" {% if data['english'] == 'CPS' %}selected{% endif %}>CPS</option>
+          <option value="RPW" {% if data['english'] == 'RPW' %}selected{% endif %}>RPW</option>
+          <option value="0" {% if data['english'] == '0' %}selected{% endif %}>Completed</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- GERMAN LEVEL -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <select class="form-control" id="german" name="german">
+          <option value="">Select German Level</option>
+          <option value="1" {% if data['german'] == '1' %}selected{% endif %}>1</option>
+          <option value="2" {% if data['german'] == '2' %}selected{% endif %}>2</option>
+          <option value="3" {% if data['german'] == '3' %}selected{% endif %}>3</option>
+          <option value="4" {% if data['german'] == '4' %}selected{% endif %}>4</option>
+          <option value="5" {% if data['german'] == '5' %}selected{% endif %}>Completed</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- CURRENT GROUP -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="number"
+          placeholder="Current-Group"
+          id="current_group"
+          name="current_group"
+          value="{{ data['current_group'] if data['current_group'] else '' }}"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- CURRENT TUTORIAL -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="number"
+          placeholder="Current-Tutorial"
+          name="current_tutorial"
+          id="current_tutorial"
+          value="{{ data['current_tutorial'] if data['current_tutorial'] else '' }}"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- DESIRED GROUP OPTION 1 -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="number"
+          placeholder="Desired-Group (option-1)"
+          id="desired_group1"
+          name="desired_group1"
+          value="{{ data['desired_group1'] if data['desired_group1'] else '' }}"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- DESIRED TUTORIAL OPTION 1 -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="number"
+          placeholder="Desired-Tutorial (option-1)"
+          name="desired_tutorial1"
+          id="desired_tutorial1"
+          value="{{ data['desired_tutorial1'] if data['desired_tutorial1'] else '' }}"
+        />
+      </div>
+      <small class="form-text text-muted mt-1">
+        If you don’t want a specific tutorial, put 0.
+      </small>
+    </div>
+  </div>
+  
+  <!-- DESIRED GROUP OPTION 2 -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="number"
+          placeholder="Desired-Group (option-2)"
+          id="desired_group2"
+          name="desired_group2"
+          value="{{ data['desired_group2'] if data['desired_group2'] else '' }}"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- DESIRED TUTORIAL OPTION 2 -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="number"
+          placeholder="Desired-Tutorial (option-2)"
+          id="desired_tutorial2"
+          name="desired_tutorial2"
+          value="{{ data['desired_tutorial2'] if data['desired_tutorial2'] else '' }}"
+        />
+      </div>
+      <small class="form-text text-muted mt-1">If you don’t want a specific tutorial, put 0.</small>
+    </div>
+  </div>
+
+  <!-- Phone Number -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="number"
+          placeholder="Phone Number (optional)"
+          id="phone"
+          name="phone"
+          value="{{ data['phone'] if data['phone'] else '' }}"
+          step="any"
+        />
+      </div>
+      <small class="form-text text-muted mt-1">Providing your phone number will make communication quicker and more convenient. If you prefer not to share it, simply enter 0</small>
+    </div>
+  </div>
+
+  <!-- Password -->
+  <div class="row">
+    <div class="col-sm-5 mx-auto mt-3 form-group">
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="password"
+          placeholder="Password"
+          id="password"
+          name="password"
+          value="{{ data['password'] if data['password'] else '' }}"
+        />
+      </div>
+      <small class="form-text text-muted mt-1">
+        Write a password so that you won't need to sign up again.
+      </small>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary d-block mx-auto">OK</button>
+  <br />
+  <div class="d-flex justify-content-center align-items-center">
+    <p class="mb-0 me-2 mr-2">Already registered?</p>
+    <a class="nav-item nav-link p-0" id="login" href="/login">Login</a>
+  </div>
+  <br /><br />
+</form>
+{% endblock %}
