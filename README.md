@@ -3,7 +3,7 @@
 ## Project Overview
 
 This website is designed to **help students easily connect and switch tutorial groups** with others who are enrolled in the same courses. It provides a platform for students to find peers in specific tutorial groups and coordinate switches efficiently. The website also includes features for managing user data, such as updating or deleting information, and a secure login system for quick access to personalized data.
-
+Try it: https://guctutoswitch.vercel.app/ 
 ---
 
 ## Key Features
@@ -64,7 +64,9 @@ You can install all the required libraries using the following command:
 
 ```bash
 pip install Flask Flask-SQLAlchemy Flask-Login
+```
 
+Thanks for contributrs: Ziad Taha,  Abdelrahman Samir
 
 
 
